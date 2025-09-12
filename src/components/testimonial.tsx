@@ -1,4 +1,5 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export function Testimonial() {
   const testimonials = [
@@ -20,9 +21,15 @@ export function Testimonial() {
   return (
     <section className="bg-background py-16 ">
       <div className="text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary max-w-3xl mx-auto">
-          Ini kata mereka yang udah pernah jadi #buddy sirkels
-        </h2>
+        <ScrollReveal
+          baseOpacity={0}
+          enableBlur={true}
+          baseRotation={1}
+          blurStrength={3}
+          containerClassName="text-4xl md:text-5xl font-bold text-primary max-w-3xl mx-auto"
+        >
+          Ini Kata Mereka yang Udah Pernah Jadi #Buddy Sirkels
+        </ScrollReveal>
       </div>
       <div className="max-w-5xl mx-auto">
         <AnimatedTestimonials testimonials={testimonials} />

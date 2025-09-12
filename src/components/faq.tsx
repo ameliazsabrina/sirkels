@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface FAQItem {
   question: string;
@@ -63,9 +64,15 @@ export const FAQ = () => {
       <div className="bg-primary rounded-b-4xl">
         <div className="py-20 px-6 max-w-4xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-4">
-              FAQS
-            </h2>
+            <ScrollReveal
+              baseOpacity={0}
+              enableBlur={true}
+              baseRotation={1}
+              blurStrength={3}
+              containerClassName="text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-4"
+            >
+              FAQs
+            </ScrollReveal>
           </div>
 
           {/* FAQ Items */}

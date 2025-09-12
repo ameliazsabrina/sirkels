@@ -1,17 +1,25 @@
+import ScrollReveal from "@/components/ui/ScrollReveal";
+
 export const Activity = () => {
   return (
     <section className="bg-background">
-      <div className="py-20 px-6 max-w-5xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text mb-4 text-balance">
-            Kita ngapain aja nanti?
-          </h2>
+      <div className="py-16 px-6 max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <ScrollReveal
+            baseOpacity={0}
+            enableBlur={true}
+            baseRotation={1}
+            blurStrength={3}
+            containerClassName="text-3xl md:text-4xl lg:text-5xl font-bold text-text mb-4 text-balance"
+          >
+            Kita Ngapain Aja Nanti?
+          </ScrollReveal>
           <p className="text-gray-600 font-medium text-lg">
             Kelas yang ga formal! kita topiknya fokus untuk bangun skill
             komunikasi kamu!
           </p>
         </div>
-        <div className="bg-accent rounded-3xl p-8 md:p-12 mb-16">
+        <div className="bg-accent rounded-3xl p-8 md:p-12 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             <div className="text-center md:text-left">
               <h3 className="text-2xl md:text-3xl font-bold text-secondary mb-2">

@@ -1,5 +1,6 @@
 import React from "react";
 import ScrollVelocity from "./ui/scroll-velocity";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const Seo = () => {
   return (

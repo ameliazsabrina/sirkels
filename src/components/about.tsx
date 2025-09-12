@@ -10,16 +10,10 @@ export const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        pin: true,
-        pinSpacing: false,
-      });
-
       gsap.fromTo(
         textRef.current,
         { opacity: 0, x: -100 },
@@ -51,6 +45,16 @@ export const About = () => {
             start: "top bottom-=50px",
             end: "bottom center",
             toggleActions: "play none none reverse",
+            onEnter: () => {
+              // Start video after 3 second delay when it enters viewport
+              setTimeout(() => {
+                if (videoRef.current) {
+                  videoRef.current.play().catch((error) => {
+                    console.log("Video autoplay failed:", error);
+                  });
+                }
+              }, 5000);
+            },
           },
         }
       );
@@ -60,10 +64,10 @@ export const About = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-background h-fit pin-panel">
-      <div className="py-8 px-6 max-w-5xl mx-auto h-fit flex items-center">
+    <section ref={sectionRef} className="bg-background py-8">
+      <div className="pb-12 px-6 max-w-5xl mx-auto h-fit flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2  items-center justify-between ">
-          <div ref={textRef} className="space-y-2">
+          <div ref={textRef} className="space-y-2 text-center lg:text-left">
             <p className="text-lg md:text-xl leading-relaxed text-gray-800">
               Sirkels bukan cuma soal belajar Inggris.
             </p>
@@ -76,13 +80,13 @@ export const About = () => {
               tumbuh jadi lebih percaya diri.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-8 flex justify-center lg:justify-start">
               <span className="inline-block bg-secondary text-gray-700 px-4 py-2 rounded-full text-sm font-medium">
                 No Judgement – Intimate – Fun
               </span>
             </div>
           </div>
-          <div ref={imageRef} className="flex justify-end">
+          <div ref={imageRef} className="flex justify-center lg:justify-end">
             {/* <Image
               src="/about.png"
               alt="About"
@@ -91,11 +95,13 @@ export const About = () => {
               className="bg-gray-200 rounded-lg h-80 w-80 object-cover"
             /> */}
             <video
+              ref={videoRef}
               width="500"
               height="500"
               controls
               preload="none"
-              className=" rounded-lg h-80 w-80 "
+              className="rounded-lg h-80 w-80 mt-8"
+              muted
             >
               <source src="/video-testimoni-rara.mp4" type="video/mp4" />
             </video>

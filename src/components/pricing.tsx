@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LuBadgeCheck, LuBadgeMinus } from "react-icons/lu";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,17 +99,23 @@ export const Pricing = () => {
     <section ref={sectionRef} className="bg-primary">
       <div className="py-20 px-6 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-6 leading-tight max-w-sm ">
-              Worth it gasih? kan ada yang gratis
-            </h2>
+          <div className="text-center lg:text-left">
+            <ScrollReveal
+              baseOpacity={0}
+              enableBlur={true}
+              baseRotation={1}
+              blurStrength={3}
+              containerClassName="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-6 leading-tight max-w-sm mx-auto lg:mx-0"
+            >
+              Worth It Gasih? Kan Ada yang Gratis
+            </ScrollReveal>
             <p className="text-lg text-background mb-8">
               Opsi yang kamu punya untuk ngembangin skill speaking bahasa
               Inggris kamu
             </p>
           </div>
-          <div className="flex items-center">
-            <p className="text-lg leading-relaxed text-background">
+          <div className="flex items-center text-center lg:text-left">
+            <p className="text-md md:text-lg leading-relaxed text-background">
               Komunitas gratis biasanya cuma latihan santai. Di Sirkels, kamu
               dapet 6 minggu program terstruktur, circle kecil 4-6 orang, plus
               feedback personal. Jadi bukan cuma practice, tapi juga mindset,
