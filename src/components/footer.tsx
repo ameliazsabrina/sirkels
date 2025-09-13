@@ -27,7 +27,7 @@ export const Footer = () => {
                 sirkels.contact@gmail.com
               </a>
             </div>
-            <Link href="https://wa.me/6281234567890">
+            <Link href="https://wa.me/6285702064758">
               <button className="bg-transparent border-2 border-background text-background md:px-8 px-4 md:py-3 py-2 rounded-full whitespace-nowrap  font-medium hover:bg-background hover:text-accent transition-colors text-underline">
                 Contact us
               </button>

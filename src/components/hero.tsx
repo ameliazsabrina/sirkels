@@ -43,12 +43,12 @@ export const Hero = () => {
               timeout={4500}
             />
             <a
-              href="https://wa.me/6281234567890?text=Hi%20Sirkels%20Team%2C%0A%0AI%27m%20interested%20in%20booking%20a%20session%20for%20the%20English%20Circle%20program.%20Could%20you%20please%20help%20me%20with%20the%20registration%20process%3F%0A%0AThank%20you%21"
+              href="https://wa.me/6285702064758?text=Hi%20Sirkels%20Team%2C%0A%0AI%27m%20interested%20in%20booking%20a%20session%20for%20the%20English%20Circle%20program.%20Could%20you%20please%20help%20me%20with%20the%20registration%20process%3F%0A%0AThank%20you%21"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button className="font-semibold text-sm md:text-xl py-4 md:py-8 px-4 md:px-6 w-36 h-auto md:w-58  md:h-16 mt-8 md:mt-4">
-                Book a Session
+                Coba Kelas Gratis
                 <MessageCircle className="!w-4 !h-auto md:!w-6 md:!h-6 ml-1" />
               </Button>
             </a>

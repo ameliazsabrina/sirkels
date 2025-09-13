@@ -31,7 +31,7 @@ export const Cta = () => {
 
         <div className="flex justify-center">
           <a
-            href="https://wa.me/6281234567890?text=Hi%20Sirkels%20Team%2C%0A%0AI%27m%20interested%20in%20joining%20the%20English%20Circle%20program.%20Could%20you%20please%20provide%20me%20with%20more%20information%20about%3A%0A%0A-%20Available%20schedules%20for%20the%20next%20batch%0A-%20Registration%20process%0A-%20Payment%20methods%0A%0AThank%20you%21"
+            href="https://wa.me/6285702064758?text=Hi%20Sirkels%20Team%2C%0A%0AI%27m%20interested%20in%20joining%20the%20English%20Circle%20program.%20Could%20you%20please%20provide%20me%20with%20more%20information%20about%3A%0A%0A-%20Available%20schedules%20for%20the%20next%20batch%0A-%20Registration%20process%0A-%20Payment%20methods%0A%0AThank%20you%21"
             target="_blank"
             rel="noopener noreferrer"
           >
