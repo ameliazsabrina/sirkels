@@ -184,16 +184,16 @@ export const Pricing = () => {
             <div className="space-y-3">
               <p className="text-sm font-semibold text-background">Pros:</p>
               <p className="text-background/90 flex items-center gap-2">
-                <LuBadgeCheck className="w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
-                Terjadwal, ada guru
+                <LuBadgeCheck className="w-4 h-4 flex-shrink-0 mt-0.5" /> Sirkel
+                kecil 4-6 dan seru, kurikulum terstruktur, bikin lebih pede
               </p>
 
               <p className="text-sm font-semibold text-background pt-2">
                 Cons:
               </p>
               <p className="text-background/90 flex items-center gap-2">
-                <LuBadgeMinus className="w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
-                Peserta banyak, kurang fokus ke kamu
+                <LuBadgeMinus className="w-4 h-4 flex-shrink-0 mt-0.5" /> Slot
+                terbatas, untuk 18 orang pertama
               </p>
             </div>
           </div>
