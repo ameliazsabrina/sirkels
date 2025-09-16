@@ -64,7 +64,7 @@ export const About = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-background py-8">
+    <section ref={sectionRef} className="bg-background py-8" id="about">
       <div className="pb-12 px-6 max-w-5xl mx-auto h-fit flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2  items-center justify-between ">
           <div ref={textRef} className="space-y-2 text-center lg:text-left">

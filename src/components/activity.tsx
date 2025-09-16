@@ -2,7 +2,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const Activity = () => {
   return (
-    <section className="bg-background">
+    <section className="bg-background" id="program">
       <div className="py-16 px-6 max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <ScrollReveal

@@ -49,68 +49,66 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
     const scroller = scrollContainerRef && scrollContainerRef.current ? scrollContainerRef.current : window;
 
-    // Rotation animation
-    gsap.fromTo(
-      el,
-      { transformOrigin: '0% 50%', rotate: baseRotation },
-      {
+    // Set initial state
+    gsap.set(el, { transformOrigin: '0% 50%', rotate: baseRotation });
+    
+    const wordElements = el.querySelectorAll<HTMLElement>('.word');
+    gsap.set(wordElements, { 
+      opacity: baseOpacity, 
+      filter: enableBlur ? `blur(${blurStrength}px)` : 'none',
+      willChange: 'opacity, filter, transform'
+    });
+
+    // Create a timeline for all animations
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        scroller,
+        start: 'top 85%',
+        end: 'top 20%',
+        toggleActions: 'play none none reverse',
+        once: false,
+        fastScrollEnd: true,
+        onToggle: (self) => {
+          // Ensure animations complete properly
+          if (self.isActive) {
+            tl.play();
+          }
+        }
+      }
+    });
+
+    // Add all animations to timeline
+    tl.to(el, {
         rotate: 0,
         duration: 1,
         ease: 'power2.out',
-        scrollTrigger: {
-          trigger: el,
-          scroller,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: 1,
-        }
-      }
-    );
-
-    const wordElements = el.querySelectorAll<HTMLElement>('.word');
-
-    // Opacity animation
-    gsap.fromTo(
-      wordElements,
-      { opacity: baseOpacity, willChange: 'opacity' },
-      {
+      }, 0)
+      .to(wordElements, {
         opacity: 1,
-        duration: 0.6,
+        duration: 0.8,
         stagger: 0.03,
         ease: 'power2.out',
-        scrollTrigger: {
-          trigger: el,
-          scroller,
-          start: 'top 85%',
-          end: 'top 30%',
-          scrub: 1,
-        }
-      }
-    );
+      }, 0.2);
 
-    // Blur animation
+    // Add blur animation if enabled
     if (enableBlur) {
-      gsap.fromTo(
-        wordElements,
-        { filter: `blur(${blurStrength}px)` },
-        {
-          filter: 'blur(0px)',
-          duration: 0.8,
-          stagger: 0.03,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: el,
-            scroller,
-            start: 'top 85%',
-            end: 'top 30%',
-            scrub: 1,
-          }
-        }
-      );
+      tl.to(wordElements, {
+        filter: 'blur(0px)',
+        duration: 0.8,
+        stagger: 0.03,
+        ease: 'power2.out',
+      }, 0.2);
     }
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Clean up properly
+      tl.kill();
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.trigger === el) {
+          trigger.kill();
+        }
+      });
     };
   }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength]);
 

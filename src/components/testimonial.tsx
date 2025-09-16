@@ -5,10 +5,10 @@ export function Testimonial() {
   const testimonials = [
     {
       quote:
-        "SERUU BANGETTT sumpah kalo misalnya nadine ada uang, pasti bakal ikut lagi sih 😛, belajarnya seru banget bikin nyaman dan pede, dan ga kaku kaya di kelas formal",
-      name: "Nadin (13yo)",
-      designation: "Pelajar",
-      src: "/nadin.png",
+        "Karna muridnya lebih sedikit jadi lebih semi privat alhasil interaktif - ada moment sharing cerita satu sama lain alhasil bondingnya okee banget! Jujur suka banget ada moment new vocab yang jarang ditemui, pembawaan makna, contoh dan adanya keselarasan dengan topicnya juga. Bagian conversation juga mewajibkan untuk pede aja dulu buat ngomong,",
+      name: "Asmuna (24yo)",
+      designation: "Pekerja",
+      src: "/asmuna.png",
     },
     {
       quote:
@@ -17,9 +17,18 @@ export function Testimonial() {
       designation: "Mahasiswa",
       src: "/rara.png",
     },
+    {
+      quote:
+        "SERUU BANGETTT sumpah kalo misalnya nadine ada uang, pasti bakal ikut lagi sih 😛, belajarnya seru banget bikin nyaman dan pede, dan ga kaku kaya di kelas formal",
+      name: "Nadin (13yo)",
+      designation: "Pelajar",
+      src: "/nadin.png",
+    },
+  
+ 
   ];
   return (
-    <section className="bg-background py-16 ">
+    <section className="bg-background py-16 " id="testimoni">
       <div className="text-center">
         <ScrollReveal
           baseOpacity={0}

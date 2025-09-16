@@ -60,7 +60,7 @@ export const FAQ = () => {
   };
 
   return (
-    <section className="bg-accent">
+    <section className="bg-accent" id="faqs">
       <div className="bg-primary rounded-b-4xl">
         <div className="py-20 px-6 max-w-4xl mx-auto">
           <div className="mb-16">
