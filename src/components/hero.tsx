@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import SplitText from "./ui/split-text";
 import PixelBlast from "@/components/ui/PixelBlast";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 
 export const Hero = () => {
+  const buttonsRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!buttonsRef.current) return;
+    
+    const buttons = buttonsRef.current.querySelectorAll('a');
+    
+    gsap.fromTo(buttons, 
+      { opacity: 0, y: 20 }, 
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        ease: "power3.out", 
+        stagger: 0.2, 
+        delay: 5.0
+      }
+    );
+  }, { scope: buttonsRef });
+
   return (
     <section className="relative  w-full overflow-hidden bg-hero py-16">
       <div className="absolute inset-0 z-0">
@@ -42,7 +64,7 @@ export const Hero = () => {
               textAlign="center"
               timeout={4500}
             />
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-center mt-8 md:mt-12">
+            <div ref={buttonsRef} className="flex flex-col md:flex-row gap-4 items-center justify-center mt-8 md:mt-12">
               <a
                 href="https://wa.me/6285702064758?text=Hi%20Sirkels%20Team%2C%0A%0AI%27m%20interested%20in%20booking%20a%20session%20for%20the%20English%20Circle%20program.%20Could%20you%20please%20help%20me%20with%20the%20registration%20process%3F%0A%0AThank%20you%21"
                 target="_blank"

@@ -20,7 +20,7 @@ export const Market = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           <div className="space-y-4 text-center md:text-left">
-            <h3 className="text-xl md:text-2xl font-bold text-secondary leading-tight">
+            <h3 className="text-xl md:text-2xl font-semibold text-secondary leading-tight">
               Pelajar/Pekerja <br />
               Gen-Z
             </h3>
@@ -31,7 +31,7 @@ export const Market = () => {
           </div>
 
           <div className="space-y-4 text-center md:text-left">
-            <h3 className="text-xl md:text-2xl font-bold text-secondary leading-tight">
+            <h3 className="text-xl md:text-2xl font-semibold text-secondary leading-tight">
               Budget pas-pasan &<br />
               Ga cocok kelas rame
             </h3>
@@ -42,7 +42,7 @@ export const Market = () => {
           </div>
 
           <div className="space-y-4 text-center md:text-left">
-            <h3 className="text-xl md:text-2xl font-bold text-secondary leading-tight">
+            <h3 className="text-xl md:text-2xl font-semibold text-secondary leading-tight">
               Pengen <br /> lebih pede
             </h3>
             <p className="text-background leading-relaxed">

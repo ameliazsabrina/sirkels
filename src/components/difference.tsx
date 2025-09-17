@@ -75,7 +75,7 @@ export const Difference = () => {
                     alt="Circle Small"
                     width={100}
                     height={100}
-                    className="rounded-lg"
+                    className="rounded-lg object-cover w-32 h-32"
                   />
                 </div>
 
